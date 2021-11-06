@@ -1,21 +1,48 @@
-window.alert("This is an alert!! JavaScript is running!")
-// this creates a function named "fight"
-
-function fight () {
-    window.alert("The Fight has begun!");
-}
-fight();
-
 var playerName = window.prompt("What is your robot's name?");
-// note the lack of quotation marks aroung playerName
-console.log(playerName);
-console.log("this logs a string, good for leaving yhourself a message");
-// this will do math and log 20
-console.log(10+10);
-// what is this?
-console.log("our robot's name is " + playerName);
+var playerHealth = 100;
+var playerAttack = 10;
 
-var name = "Sarah";
-console.log(name);
+// you can also log multiple values at once like this
+console.log(playerName, playerAttack, playerHealth);
 
-// fight();
+var enemyName = "Roborto";
+var enemyHealth = 50;
+var enemyAttack = 12;
+
+var fight = function () {
+    // alert players that they are starting the round
+    window.alert("Welcome to Robot Gladiators");
+
+    // subtract the value of playerAttack from the value of enemyHealth and use that result to update the value in the enemyhealth variable
+    enemyHealth = enemyHealth - playerAttack;
+    // log  a resulting message to the console so we know that it worked
+    console.log(
+        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+    );
+
+    // check enemy's health
+    if (enemyHealth <= 0) {
+        window.alert(enemyName + " has died!");
+    }
+    else {
+        window.alert(enemyName + " still has " + enemyHealth + " health left");
+    }
+
+    // subtract the value of the enemyAttack from the value of playerHealth and use that result to update the value in playerhealth varieble
+    playerHealth = playerHealth - enemyAttack;
+    // log a resulting message to the console so we know that it worked,
+    console.log(
+        enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+    );
+
+    // check player's health
+    if (playerHealth <= 0) {
+        window.alert(playerName + " has died!");
+    }
+    else {
+        window.alert(playerName + " still has " + playerHealth + " health left");
+    }
+
+    };
+
+fight();
