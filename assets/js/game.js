@@ -84,12 +84,13 @@ for(var i = 0; i < enemyNames.length; i++) {
 
     // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
     fight(pickedEnemyName); 
-    {
+    
     if (playerHealth > 0 && i < enemyNames.length - 1) {
         var storeConfirm = window.confirm("The fight is over, visit the store before the next round!");
         
         if (storeConfirm){
         shop();
+        }
         }
     }
     else {
